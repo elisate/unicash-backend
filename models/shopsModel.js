@@ -13,7 +13,6 @@ const shopSchema = new Schema(
     shopTIN: {
       type: String,
       required: false,
-      lowercase: true,
     },
     shopLocation: {
       type: String,
@@ -24,10 +23,20 @@ const shopSchema = new Schema(
       required: true,
     },
     
-    shopPhone: {
+    shopContact:{
       type: String,
       required:false
     },
+    RegCertificate:{
+      type:Array,
+    },
+    agreementDoc:{
+      type:Array,
+    },
+    images:{
+      type:Array,
+    }
+
   },
   {
     timestamps: true,
