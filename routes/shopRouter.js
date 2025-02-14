@@ -1,6 +1,7 @@
 import express from "express";
 import { createShop,deleteShopById ,getShopById,updateShopById,getShops  } from '../controllers/shopController.js'
 import configureMulter from "../utils/multer.js";
+import { Admin } from "../middlewares/roleControl.js";
 const upload=configureMulter();
 const shopRouter = express.Router();
 shopRouter.post('/createShop',upload, createShop);
