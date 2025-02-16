@@ -1,15 +1,22 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const {model,schema}=mongoose;
-const userschema=new Schema(
- {
-userEmail:{type:string,require:true},
-userNames:{type:string,require:true},
-userRole:{type:string,require:true, enum: ["Admin"],},
+const { model, Schema } = mongoose;
 
+const userSchema = new Schema(
+  {
+    userEmail: { type: String, required: true, unique: true },
+    userNames: { type: String, required: true },
+    password: { type: String, required: true }, // Secure user authentication
+    userRole: {
+      type: String,
+      required: true,
+      enum: ["Admin", "ShopOwner", "Student"],
+      default: "Student",
     },
-    { timestamps: true }
-)
+    images: { type: Array, required: false },
+  },
+  { timestamps: true }
+);
 
-const GateUser =model("GateUser",userschema);
+const GateUser = model("GateUser", userSchema);
 export default GateUser;

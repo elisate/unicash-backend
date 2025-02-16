@@ -38,7 +38,7 @@ mongoose
       console.log(`Node API is running on port http://localhost:${port}`);
       console.log(`Node API is running on port http://localhost:${port}/api-docs`)
   
-      console.log(`Node API is running on deployed  https://unicash-backend.onrender.com:${port}/api-docs`)
+      console.log(`Node API is running on deployed  https://unicash-backend.onrender.com/api-docs`)
     });
   })
   .catch((error) => {
