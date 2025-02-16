@@ -11,6 +11,7 @@ const studentSchema = new Schema(
     studentAccount: { type: String, required: true },
     studentLoan_status: { type: String, required: false },
     campusName: { type: String, required: false },
+    images: { type: String, required: false },
     verificationToken: { type: String, required: false },
     tokenExpiry: { type: Date, required: false },
     isVerified: { type: Boolean, default: false }, // New field

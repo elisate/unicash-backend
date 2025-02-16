@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 // import Docrouter from "./src/Docs/Swagger.js";
 import cors from "cors";
 import mainRouter from "./routes/indexRouter.js";
+import Docrouter from "./Docs/Swagger.js";
 
 dotenv.config();
 const app = express();
@@ -35,6 +36,9 @@ mongoose
     console.log("Connected to MongoDB");
     app.listen(port, () => {
       console.log(`Node API is running on port http://localhost:${port}`);
+      console.log(`Node API is running on port http://localhost:${port}/api-docs`)
+  
+      console.log(`Node API is running on deployed  https://unicash-backend.onrender.com:${port}/api-docs`)
     });
   })
   .catch((error) => {
@@ -44,4 +48,4 @@ mongoose
 // Routes / Endpoints
 app.use(bodyParser.json());
 app.use("/", mainRouter);
-// app.use("/api-docs", Docrouter);
+app.use("/api-docs",Docrouter);
